@@ -1,0 +1,35 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  Colors
+/*----------------------------------------*/
+.white-text {
+    color: var(--white) !important;
+}
+.black-text {
+    color: var(--black);
+}
+.heading-text {
+    color: var(--heading);
+}
+.theme-secondary {
+    color: var(--secondary);
+}
+.theme-text-primary {
+    color: var(--text-secondary);
+}
+.theme-text-secondary {
+    color: var(--text-secondary);
+}
+.warning-text {
+    color: var(--warning);
+}
+.success-text {
+    color: var(--success);
+}
+.danger-text {
+    color: var(--danger);
+}
+.green-text {
+    color: var(--green);
+}

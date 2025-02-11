@@ -1,0 +1,26 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  Alerts Styles
+/*----------------------------------------*/
+.app-alert-success {
+    background: rgba($success, $alpha: 0.1);
+    border-radius: 10px;
+    .btn-close {
+        background-size: 12px;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+.app-alert-danger {
+    background: rgba($danger, $alpha: 0.1);
+    border-radius: 10px;
+    .btn-close {
+        background-size: 12px;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}

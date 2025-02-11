@@ -1,0 +1,54 @@
+:root {
+  // font family declaration
+  --ff-body: "Inter", sans-serif;
+
+  // color declaration
+
+  // Common Color
+  --white: #fff;
+  --black: hsl(0, 0%, 0%);
+  --placeholder: hsla(0, 0%, 0%, 0.5);
+  --selection: hsl(0, 0%, 0%);
+  --border-color: #D7D7D7;
+
+  // Heading Color
+  --heading: #0c0c14;
+
+  // Theme Color
+  --primary: #3BBA91;
+  --secondary: rgba(22, 22, 22, 1);
+
+  // Text Color
+  --text-primary: #676b71;
+
+  // Others Color;
+  --laundry-white: #F5F8F2;
+  --warning: #FFA739;
+  --success: #16C113;
+  --danger: #F34141;
+  --green: #80ED99;
+  --yellow: #FFAF34;
+  --purple: #6B40EA;
+
+  //font weight declaration
+  --fw-normal: normal;
+  --fw-thin: 100;
+  --fw-elight: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-sbold: 600;
+  --fw-bold: 700;
+  --fw-ebold: 800;
+  --fw-black: 900;
+
+  // font size declaration
+  --fs-body: 16px;
+  --fs-p: 16px;
+  --fs-h1: 52px;
+  --fs-h2: 42px;
+  --fs-h3: 32px;
+  --fs-h4: 24px;
+  --fs-h5: 20px;
+  --fs-h6: 16px;
+}

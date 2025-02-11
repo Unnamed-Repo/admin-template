@@ -1,0 +1,45 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.12 Badge
+/*----------------------------------------*/
+
+// Badge
+.app-badge {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+    display: inline-block;
+    line-height: 1;
+    text-align: center;
+    position: relative;
+    background-color: var(--white);
+    padding: 9px 20px;
+    color: var(--primary);
+    border-radius: 8px;
+	&.primary {
+		color: var(--primary);
+		background-color: rgba($primary, $alpha: 0.2);
+	}
+	&.warning {
+		color: var(--warning);
+		background-color: rgba($warning, $alpha: 0.2);
+	}
+	&.danger {
+		color: var(--danger);
+		background-color: rgba($danger, $alpha: 0.2);
+	}
+	&.success {
+		color: var(--success);
+		background-color: rgba($success, $alpha: 0.2);
+	}
+	&.black {
+		color: var(--black);
+		background-color: rgba($black, $alpha: 0.2);
+	}
+	&.purple {
+		background: rgba($purple, $alpha: 0.1);
+		border-radius: 10px;
+		color: var(--purple);
+	}
+}

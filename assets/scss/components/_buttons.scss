@@ -1,0 +1,223 @@
+@use "../utils" as *;
+
+/*---------------------------------
+/*  Button styles
+---------------------------------*/
+.btn-wrap {
+	@include flexbox();
+	align-items: center;
+	gap: 15px 15px;
+	flex-wrap: wrap;
+}
+
+.rockbank-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 46px;
+	color: var(--white);
+	font-size: 16px;
+	font-weight: 600;
+	padding: 0 30px;
+	gap: 5px;
+
+	&.primary-btn {
+		background-color: var(--primary);
+
+		&:hover {
+			background-color: var(--primary);
+			color: var(--white);
+		}
+	}
+
+	&.secondary-btn {
+		background: var(--white);
+		border: 1px solid var(--secondary);
+		color: var(--secondary);
+		padding: 0 30px;
+
+		&:hover {
+			background-color: #FF5528;
+			color: var(--white);
+		}
+	}
+
+	&.white-btn {
+		background-color: var(--white);
+		color: var(--primary);
+	}
+
+	&.orange-btn {
+		background-color: var(--secondary);
+
+		&:hover {
+			background-color: #1359d5;
+			color: var(--white);
+		}
+	}
+
+	&.blue-btn {
+		background-color: #136EF9;
+
+		&:hover {
+			color: var(--white);
+		}
+	}
+
+	&.purple-btn {
+		background-color: #6B40EA;
+
+		&:hover {
+			color: var(--white);
+		}
+	}
+
+	&.success-btn {
+		background-color: #16C113;
+
+		&:hover {
+			color: var(--white);
+		}
+	}
+
+	&.btn-fill {
+		background-color: var(--primary);
+		padding: 0 15px;
+		border-radius: 10px;
+
+		&:hover {
+			color: var(--white);
+		}
+	}
+
+	&.btn-xxs {
+		height: 44px;
+		padding: 0 20px;
+		gap: 7px;
+		font-size: 14px;
+		font-weight: 500;
+
+		i {
+			font-size: 16px;
+		}
+	}
+
+	&.btn-xs {
+		height: 58px;
+	}
+}
+
+// Text btn 
+.text-link {
+	font-weight: 500;
+	font-size: 14px;
+	color: var(--white);
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+
+	&::after {
+		position: absolute;
+		content: '';
+		inset-inline-start: auto;
+		inset-inline-end: 0;
+		bottom: 4px;
+		width: 0%;
+		height: 1px;
+		background-color: var(--white);
+		@extend %app-transition-3;
+	}
+
+	&:hover {
+		color: var(--white);
+
+		&::after {
+			inset-inline-start: 0;
+			inset-inline-end: auto;
+			width: 100%;
+		}
+	}
+}
+
+// Td action btn
+.app-action-btn {
+	@include flexbox();
+	flex-direction: row;
+	align-items: center;
+	gap: 10px;
+
+	.action-btn {
+		font-size: 18px;
+
+		&.orange-btn {
+			color: var(--primary);
+		}
+
+		&.warning-btn {
+			color: var(--warning);
+		}
+	}
+}
+
+.app-dropdown {
+	.dropdown-toggle::after {
+		border: 0;
+		font-size: 14px;
+		transform: translateY(2px);
+		margin-inline-start: 0;
+	}
+
+	.dropdown-menu {
+		background: var(--white);
+		box-shadow: 4px 4px 20px rgba($black, $alpha: 0.1);
+		border: 0;
+		padding: 12px 0px;
+	}
+
+	.dropdown-item {
+		font-size: 12px;
+
+		.dropdown-item:focus,
+		.dropdown-item:hover {
+			color: var(--primary);
+			background-color: var(--primary);
+		}
+	}
+
+	li {
+		&:not(:last-child) {
+			margin-bottom: 5px;
+		}
+	}
+}
+
+.app-action-fill-btn {
+	border-radius: 9px !important;
+	padding: 0 15px;
+	color: var(--white);
+	height: 38px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+
+	&.orange-btn {
+		background: var(--primary);
+	}
+
+	&.white-btn {
+		background: var(--white);
+		box-shadow: 0px 4px 10px rgba(0, 101, 255, 0.04);
+		border-radius: 5px;
+		color: var(--primary);
+	}
+
+	&.gray-btn {
+		background: rgba(0, 101, 255, 0.1);
+		border: 1px solid var(--white);
+		box-shadow: 0px 4px 10px rgba(0, 101, 255, 0.04);
+		border-radius: 5px;
+		color: rgba($black, $alpha: 0.6);
+	}
+}

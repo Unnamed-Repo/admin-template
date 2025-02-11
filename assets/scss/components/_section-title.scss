@@ -1,0 +1,19 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/* Section Title  
+/*----------------------------------------*/
+.section-subtitle {
+	font-size: 20px;
+	font-weight: 500;
+	display: block;
+	margin-bottom: 20px;
+	@media #{$xl,$lg,$md} {
+		font-size: 18px;
+		margin-bottom: 15;
+	}
+	@media #{$xs,$sm,$md} {
+		font-size: 16px;
+		margin-bottom: 15;
+	}
+}

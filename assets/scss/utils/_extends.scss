@@ -1,0 +1,62 @@
+@use './mixins' as *;
+
+%include-bg {
+	@include background();
+}
+
+%app-transition-color {
+	@include app-transition(color);
+}
+
+%app-transition-transform {
+	@include app-transition(transform);
+}
+
+%app-transition-border-color {
+	@include app-transition(border-color);
+}
+
+%app-transition-bg-color {
+	@include app-transition(background-color);
+}
+
+%app-transition-fz {
+	@include app-transition(font-size);
+}
+
+// Transition 
+%app-transition-3 {
+	@include app-transition();
+}
+
+%app-transition-5 {
+	@include app-transition(opacity, 0.5s, ease-in-out, 0.2s);
+}
+
+// Font
+%app-ff-inter {
+	font-family: var(--ff-inter);
+}
+
+// Transform
+%translateY1_2 {
+	@include transform(translateY(-50%));
+}
+
+%translateX1_2 {
+	@include transform(translateX(-50%));
+}
+
+%translate1_2 {
+	@include transform(translate(-50%, -50%));
+}
+
+// Bg thumbnails
+%bg-thumb {
+	position: absolute;
+	top: 0;
+	inset-inline-start: 0;
+	width: 100%;
+	height: 100%;
+
+}

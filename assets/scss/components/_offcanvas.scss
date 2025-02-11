@@ -1,0 +1,142 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  Offcanvas
+/*----------------------------------------*/
+
+.offcanvas-area {
+    background: $white none repeat scroll 0 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 340px;
+    height: 100%;
+    -webkit-transform: translateX(calc(100% + 80px));
+    -moz-transform: translateX(calc(100% + 80px));
+    -ms-transform: translateX(calc(100% + 80px));
+    -o-transform: translateX(calc(100% + 80px));
+    transform: translateX(calc(100% + 80px));
+    -webkit-transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+    -moz-transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+    transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+    z-index: 999;
+    overflow-y: scroll;
+    overscroll-behavior-y: contain;
+    scrollbar-width: none;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media #{$xxs} {
+        width: 100%;
+    }
+
+    &.info-open {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.offcanvas-logo {
+    a {
+        img {
+            width: 160px;
+
+            @media #{$xs} {
+                width: 150px;
+            }
+
+            @media #{$xs} {
+                width: 140px;
+            }
+        }
+    }
+}
+
+.offcanvas-content {
+    padding-bottom: 45px;
+}
+
+.offcanva-wrapper {
+    position: relative;
+    height: 100%;
+    padding: 30px 30px;
+}
+
+.offcanvas-top {
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba($black, $alpha: 0.1);
+}
+
+.offcanvas-title {
+    color: var(--white);
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    @media #{$xxs} {
+        font-size: 20px;
+    }
+}
+
+.offcanva-wrapper {
+    & p {
+        margin-bottom: 25px;
+    }
+}
+
+.offcanvas-overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: $black;
+    z-index: 900;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    inset-inline-end: 0;
+    transition: .3s;
+
+    &.overlay-open {
+        opacity: 0.6;
+        visibility: visible;
+    }
+}
+
+.sidebar-toggle {
+    cursor: pointer;
+}
+
+.offcanvas-contact-icon {
+    margin-inline-end: 15px;
+}
+
+.offcanvas-btn {
+    @include flexbox();
+    gap: 15px;
+
+    .rockbank-btn {
+        padding: 0 20px;
+    }
+}
+
+// Close icon 
+.offcanvas-close-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    height: 44px;
+    width: 44px;
+    line-height: 40px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    border-radius: 50%;
+
+    &:hover {
+        background-color: var(--primary);
+        color: var(--white);
+        border-color: transparent;
+    }
+}

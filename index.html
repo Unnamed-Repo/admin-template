@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>RockAdmin</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg">
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+   <!--[if lte IE 9]>
+   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+   <![endif]-->
+
+   <header class="app-header">
+      <div class="left-content">
+         <!-- <div class="search-bar">
+            <span class="search-icon" id="searchMenu"><i data-lucide="search"></i></span>
+            <input type="text" name="search_menu" class="search-input" placeholder="Search Menu...">
+         </div> -->
+         <div class="sidebar-logo">
+            <a href="">
+               <img src="assets/images/sitebar-logo.png" alt="">
+            </a>
+            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <g filter="url(#filter0_d_213_2386)">
+                  <rect x="6" y="6" width="30" height="30" rx="15" fill="white" shape-rendering="crispEdges" />
+                  <rect x="6.5" y="6.5" width="29" height="29" rx="14.5" stroke="black" stroke-opacity="0.2"
+                     shape-rendering="crispEdges" />
+                  <path d="M22.75 17.5L19.25 21L22.75 24.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
+                     stroke-linejoin="round" />
+               </g>
+               <defs>
+                  <filter id="filter0_d_213_2386" x="0" y="0" width="46" height="46" filterUnits="userSpaceOnUse"
+                     color-interpolation-filters="sRGB">
+                     <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha" />
+                     <feOffset dx="2" dy="2" />
+                     <feGaussianBlur stdDeviation="4" />
+                     <feComposite in2="hardAlpha" operator="out" />
+                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                     <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_213_2386" />
+                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_213_2386" result="shape" />
+                  </filter>
+               </defs>
+            </svg>
+         </div>
+      </div>
+      <div class="right-content">
+         <div class="right-menu">
+            <ul>
+               <li>
+                  <div class="clear-cache">
+                     <a href="" class="clear-cache-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path
+                              d="M5.83333 17.5L2.25 13.9167C1.41667 13.0833 1.41667 11.8333 2.25 11.0833L10.25 3.08333C11.0833 2.25 12.3333 2.25 13.0833 3.08333L17.75 7.75C18.5833 8.58333 18.5833 9.83333 17.75 10.5833L10.8333 17.5"
+                              stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                           <path d="M18.3334 17.5H5.83337" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                           <path d="M4.16663 9.16667L11.6666 16.6667" stroke="#1D1D1D" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                     </a>
+                  </div>
+               </li>
+               <li>
+                  <button type="button" class="notifications">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                           d="M8.80115 21.4286C8.95161 21.6892 9.16802 21.9055 9.42861 22.056C9.68921 22.2064 9.98481 22.2856 10.2857 22.2856C10.5866 22.2856 10.8822 22.2064 11.1428 22.056C11.4034 21.9055 11.6198 21.6892 11.7703 21.4286"
+                           stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                           d="M2.79597 16.5651C2.68399 16.6879 2.6101 16.8405 2.58327 17.0044C2.55644 17.1684 2.57784 17.3366 2.64486 17.4886C2.71188 17.6406 2.82163 17.7699 2.96076 17.8607C3.09989 17.9515 3.26241 17.9999 3.42854 18H17.1428C17.3089 18.0001 17.4715 17.9519 17.6107 17.8612C17.7499 17.7706 17.8598 17.6415 17.927 17.4896C17.9942 17.3377 18.0158 17.1695 17.9892 17.0055C17.9626 16.8416 17.8889 16.6889 17.7771 16.566C16.6371 15.3909 15.4285 14.142 15.4285 10.2857C15.4285 8.92175 14.8867 7.61364 13.9222 6.64917C12.9578 5.6847 11.6497 5.14286 10.2857 5.14286C8.92171 5.14286 7.6136 5.6847 6.64913 6.64917C5.68466 7.61364 5.14282 8.92175 5.14282 10.2857C5.14282 14.142 3.9334 15.3909 2.79597 16.5651Z"
+                           stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <rect x="10.2856" width="13.7143" height="13.7143" rx="6.85714" fill="#F83C3F" />
+                        <path
+                           d="M16.7483 11.4665C16.165 11.4665 15.6454 11.3663 15.1897 11.1657C14.7366 10.9626 14.3785 10.684 14.1155 10.3298C13.8551 9.97303 13.7209 9.56157 13.7131 9.09542H15.4163C15.4267 9.29074 15.4905 9.46261 15.6077 9.61105C15.7275 9.75688 15.8863 9.87016 16.0842 9.95089C16.2821 10.0316 16.5048 10.072 16.7522 10.072C17.01 10.072 17.2379 10.0264 17.4358 9.93527C17.6337 9.84412 17.7887 9.71782 17.9006 9.55636C18.0126 9.3949 18.0686 9.20871 18.0686 8.99777C18.0686 8.78423 18.0087 8.59542 17.8889 8.43136C17.7717 8.2647 17.6025 8.13449 17.3811 8.04074C17.1624 7.94699 16.9019 7.90011 16.5999 7.90011H15.8538V6.65792H16.5999C16.8551 6.65792 17.0803 6.61365 17.2756 6.52511C17.4736 6.43657 17.6272 6.31417 17.7366 6.15792C17.8459 5.99907 17.9006 5.81417 17.9006 5.60324C17.9006 5.40272 17.8525 5.22694 17.7561 5.07589C17.6624 4.92225 17.5295 4.80246 17.3577 4.71652C17.1884 4.63058 16.9905 4.58761 16.7639 4.58761C16.5347 4.58761 16.3251 4.62928 16.135 4.71261C15.9449 4.79334 15.7926 4.90923 15.678 5.06027C15.5634 5.21131 15.5022 5.38839 15.4944 5.59152H13.8733C13.8811 5.13058 14.0126 4.72433 14.2678 4.37277C14.523 4.02121 14.8668 3.74647 15.2991 3.54855C15.734 3.34803 16.2249 3.24777 16.7717 3.24777C17.3238 3.24777 17.8069 3.34803 18.2209 3.54855C18.635 3.74907 18.9566 4.0199 19.1858 4.36105C19.4176 4.69959 19.5321 5.0798 19.5295 5.50167C19.5321 5.94959 19.3928 6.32329 19.1116 6.62277C18.8329 6.92225 18.4696 7.11235 18.0217 7.19308V7.25558C18.6103 7.3311 19.0582 7.53553 19.3655 7.86886C19.6754 8.19959 19.829 8.61365 19.8264 9.11105C19.829 9.56678 19.6975 9.97173 19.4319 10.3259C19.1689 10.6801 18.8056 10.9587 18.342 11.1618C17.8785 11.365 17.3472 11.4665 16.7483 11.4665Z"
+                           fill="white" />
+                     </svg>
+
+                     <span class="notification-count">40</span>
+                  </button>
+               </li>
+               <li>
+                  <button type="button" class="language-toggle">
+                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_229_769)">
+                           <path
+                              d="M9 18C13.9556 18 18 13.9553 18 9C18 4.04437 13.9553 0 9 0C4.04441 0 0 4.04469 0 9C0 13.9556 4.04469 18 9 18ZM11.67 16.4833C12.18 15.8316 12.5708 15.0544 12.8644 14.2731H14.9374C14.059 15.2613 12.9387 16.0292 11.67 16.4833ZM15.7297 13.2188H13.2054C13.5166 12.0871 13.6991 10.8325 13.7379 9.52734H16.9274C16.8385 10.8769 16.4113 12.1354 15.7297 13.2188ZM15.7297 4.78125C16.4113 5.86459 16.8385 7.12308 16.9274 8.47266H13.7379C13.6991 7.16752 13.5166 5.91286 13.2054 4.78125H15.7297ZM14.9374 3.72656H12.8644C12.5709 2.94592 12.1801 2.16858 11.67 1.51675C12.9387 1.97079 14.059 2.73867 14.9374 3.72656ZM9.52734 1.1449C10.5622 1.49565 11.3046 2.7264 11.7292 3.72656H9.52734V1.1449ZM9.52734 4.78125H12.1088C12.4441 5.89141 12.6413 7.15089 12.6829 8.47266H9.52734V4.78125ZM9.52734 9.52699H12.6829C12.6413 10.8491 12.4441 12.1086 12.1088 13.2188H9.52734V9.52699ZM9.52734 14.2731H11.7292C11.3039 15.2753 10.5614 16.5047 9.52734 16.8551V14.2731ZM3.0626 14.2734H5.13562C5.42911 15.0541 5.81994 15.8314 6.33002 16.4833C5.06134 16.0292 3.94098 15.2613 3.0626 14.2734ZM8.47266 16.8551C7.43868 16.5047 6.69618 15.2754 6.27079 14.2734H8.47266V16.8551ZM8.47266 13.2188H5.89124C5.55592 12.1086 5.35866 10.8491 5.31714 9.52734H8.47266V13.2188ZM8.47266 8.47266H5.31714C5.35866 7.15089 5.55592 5.89141 5.89124 4.78125H8.47266V8.47266ZM8.47266 1.1449V3.72656H6.27079C6.69614 2.72468 7.43861 1.49537 8.47266 1.1449ZM6.32999 1.51675C5.82005 2.16837 5.42921 2.94557 5.13559 3.72656H3.0626C3.94098 2.73867 5.06134 1.97075 6.32999 1.51675ZM2.27029 4.7809H4.79464C4.48344 5.91286 4.30088 7.16752 4.26206 8.47266H1.07262C1.16149 7.12308 1.58871 5.86459 2.27029 4.7809ZM1.07262 9.52734H4.26206C4.30088 10.8325 4.48344 12.0871 4.79464 13.2188H2.27029C1.58871 12.1354 1.16149 10.8769 1.07262 9.52734Z"
+                              fill="#1D1D1D" />
+                        </g>
+                        <defs>
+                           <clipPath id="clip0_229_769">
+                              <rect width="18" height="18" fill="white" />
+                           </clipPath>
+                        </defs>
+                     </svg>
+                     <span>English</span>
+                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.5 5.25L7 8.75L10.5 5.25" stroke="black" stroke-opacity="0.4" stroke-width="1.5"
+                           stroke-linecap="round" stroke-linejoin="round" />
+                     </svg>
+
+                  </button>
+               </li>
+            </ul>
+            <div class="user-area">
+               <div class="user-info">
+                  <div class="user-avatar">
+                     <img src="assets/images/profile/pic.png" alt="User Avatar">
+                  </div>
+                  <div class="user-name">
+                     <h4 class="user-name-text">Sajjad Hossain</h4>
+                     <span class="username">@sajjadhossainshohag</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <aside class="sidebar-wrapper">
+      <div class="sidebar-menus">
+         <ul class="menu-list">
+            <li class="menu-item">
+               <a href="" class="menu-link active">
+                  <i data-lucide="layout-dashboard"></i>
+                  Dashboard
+               </a>
+            </li>
+            <li class="menu-item">
+               <a href="javascript:void(0)" class="menu-link">
+                  <i data-lucide="user-circle"></i>
+                  Customers Management
+                  <span class="right-arrow">
+                     <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.5 5.75L7 9.25L10.5 5.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                           stroke-linejoin="round" />
+                     </svg>
+                  </span>
+               </a>
+               <ul class="submenu-items">
+                  <li class="submenu-item">
+                     <a href="" class="submenu-link">
+                        <i data-lucide="layout-dashboard"></i>
+                        All Customers
+                     </a>
+                  </li>
+                  <li class="submenu-item">
+                     <a href="" class="submenu-link">
+                        <i data-lucide="user-round-check"></i>
+                        Active Customers
+                     </a>
+                  </li>
+                  <li class="submenu-item">
+                     <a href="" class="submenu-link">
+                        <i data-lucide="user-round-x"></i>
+                        Disabled Customers
+                     </a>
+                  </li>
+                  <li class="submenu-item">
+                     <a href="" class="submenu-link">
+                        <i data-lucide="user-plus"></i>
+                        Add New Customer
+                     </a>
+                  </li>
+               </ul>
+            </li>
+            <li class="menu-item">
+               <a href="javascript:void(0)" class="menu-link">
+                  <i data-lucide="user-circle"></i>
+                  KYC Management
+                  <span class="right-arrow">
+                     <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.5 5.75L7 9.25L10.5 5.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                           stroke-linejoin="round" />
+                     </svg>
+                  </span>
+               </a>
+               <ul class="submenu-items">
+                  <li class="submenu-item">
+                     <a href="" class="submenu-link">
+                        <i data-lucide="layout-dashboard"></i>
+                        All KYC
+                     </a>
+                  </li>
+                  <li class="submenu-item">
+                     <a href="" class="submenu-link">
+                        <i data-lucide="user-round-check"></i>
+                        Pending KYC
+                     </a>
+                  </li>
+                  <li class="submenu-item">
+                     <a href="" class="submenu-link">
+                        <i data-lucide="user-round-x"></i>
+                        Approved KYC
+                     </a>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+   </aside>
+
+
+   <script src="assets/js/bootstrap-bundle.min.js"></script>
+   <script src="assets/js/lucide.min.js"></script>
+   <script src="assets/js/app.js"></script>
+</body>
+
+</html>
