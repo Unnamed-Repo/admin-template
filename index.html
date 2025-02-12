@@ -10,6 +10,7 @@
    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg">
    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
    <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="assets/css/simplebar.min.css">
    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
@@ -25,34 +26,6 @@
             <span class="search-icon" id="searchMenu"><i data-lucide="search"></i></span>
             <input type="text" name="search_menu" class="search-input" placeholder="Search Menu...">
          </div> -->
-         <div class="sidebar-logo">
-            <a href="">
-               <img src="assets/images/sitebar-logo.png" alt="">
-            </a>
-            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <g filter="url(#filter0_d_213_2386)">
-                  <rect x="6" y="6" width="30" height="30" rx="15" fill="white" shape-rendering="crispEdges" />
-                  <rect x="6.5" y="6.5" width="29" height="29" rx="14.5" stroke="black" stroke-opacity="0.2"
-                     shape-rendering="crispEdges" />
-                  <path d="M22.75 17.5L19.25 21L22.75 24.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
-                     stroke-linejoin="round" />
-               </g>
-               <defs>
-                  <filter id="filter0_d_213_2386" x="0" y="0" width="46" height="46" filterUnits="userSpaceOnUse"
-                     color-interpolation-filters="sRGB">
-                     <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                        result="hardAlpha" />
-                     <feOffset dx="2" dy="2" />
-                     <feGaussianBlur stdDeviation="4" />
-                     <feComposite in2="hardAlpha" operator="out" />
-                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
-                     <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_213_2386" />
-                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_213_2386" result="shape" />
-                  </filter>
-               </defs>
-            </svg>
-         </div>
       </div>
       <div class="right-content">
          <div class="right-menu">
@@ -128,92 +101,117 @@
       </div>
    </header>
 
-   <aside class="sidebar-wrapper">
-      <div class="sidebar-menus">
-         <ul class="menu-list">
-            <li class="menu-item">
-               <a href="" class="menu-link active">
-                  <i data-lucide="layout-dashboard"></i>
-                  Dashboard
+   <main class="main-body">
+      <aside class="sidebar-wrapper">
+         <div class="sidebar-header">
+            <div class="sidebar-logo">
+               <a href="">
+                  <div class="logo">
+                     <img src="assets/images/sitebar-logo.png" alt="">
+                  </div>
+                  <div class="fold-logo">
+                     <img src="assets/images/favicon.png" alt="">
+                  </div>
                </a>
-            </li>
-            <li class="menu-item">
-               <a href="javascript:void(0)" class="menu-link">
-                  <i data-lucide="user-circle"></i>
-                  Customers Management
-                  <span class="right-arrow">
-                     <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.5 5.75L7 9.25L10.5 5.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                           stroke-linejoin="round" />
-                     </svg>
-                  </span>
-               </a>
-               <ul class="submenu-items">
-                  <li class="submenu-item">
-                     <a href="" class="submenu-link">
-                        <i data-lucide="layout-dashboard"></i>
-                        All Customers
-                     </a>
-                  </li>
-                  <li class="submenu-item">
-                     <a href="" class="submenu-link">
-                        <i data-lucide="user-round-check"></i>
-                        Active Customers
-                     </a>
-                  </li>
-                  <li class="submenu-item">
-                     <a href="" class="submenu-link">
-                        <i data-lucide="user-round-x"></i>
-                        Disabled Customers
-                     </a>
-                  </li>
-                  <li class="submenu-item">
-                     <a href="" class="submenu-link">
-                        <i data-lucide="user-plus"></i>
-                        Add New Customer
-                     </a>
-                  </li>
-               </ul>
-            </li>
-            <li class="menu-item">
-               <a href="javascript:void(0)" class="menu-link">
-                  <i data-lucide="user-circle"></i>
-                  KYC Management
-                  <span class="right-arrow">
-                     <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.5 5.75L7 9.25L10.5 5.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                           stroke-linejoin="round" />
-                     </svg>
-                  </span>
-               </a>
-               <ul class="submenu-items">
-                  <li class="submenu-item">
-                     <a href="" class="submenu-link">
-                        <i data-lucide="layout-dashboard"></i>
-                        All KYC
-                     </a>
-                  </li>
-                  <li class="submenu-item">
-                     <a href="" class="submenu-link">
-                        <i data-lucide="user-round-check"></i>
-                        Pending KYC
-                     </a>
-                  </li>
-                  <li class="submenu-item">
-                     <a href="" class="submenu-link">
-                        <i data-lucide="user-round-x"></i>
-                        Approved KYC
-                     </a>
-                  </li>
-               </ul>
-            </li>
-         </ul>
+               <button type="button" class="collapse-icon">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M8.75 3.5L5.25 7L8.75 10.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                  </svg>
+               </button>
+            </div>
+         </div>
+         <div class="sidebar-menus">
+            <ul class="menu-list">
+               <li class="menu-item">
+                  <a href="" class="menu-link active">
+                     <i data-lucide="layout-dashboard"></i>
+                     <span class="menu-title">Dashboard</span>
+                  </a>
+               </li>
+               <li class="menu-item">
+                  <a href="javascript:void(0)" class="menu-link">
+                     <i data-lucide="user-circle"></i>
+                     <span class="menu-title">Customers Management</span>
+                     <span class="right-arrow">
+                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M3.5 5.75L7 9.25L10.5 5.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                        </svg>
+                     </span>
+                  </a>
+                  <ul class="submenu-items">
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="layout-dashboard"></i>
+                           All Customers
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-round-check"></i>
+                           Active Customers
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-round-x"></i>
+                           Disabled Customers
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-plus"></i>
+                           Add New Customer
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="menu-item">
+                  <a href="javascript:void(0)" class="menu-link">
+                     <i data-lucide="user-circle"></i>
+                     <span class="menu-title">KYC Management</span>
+                     <span class="right-arrow">
+                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M3.5 5.75L7 9.25L10.5 5.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                        </svg>
+                     </span>
+                  </a>
+                  <ul class="submenu-items">
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="layout-dashboard"></i>
+                           All KYC
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-round-check"></i>
+                           Pending KYC
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-round-x"></i>
+                           Approved KYC
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </aside>
+
+      <div class="main-content">
+         <h6 class="page-title">Dashboard</h6>
       </div>
-   </aside>
+   </main>
 
 
    <script src="assets/js/bootstrap-bundle.min.js"></script>
    <script src="assets/js/lucide.min.js"></script>
+   <script src="assets/js/simplebar.min.js"></script>
    <script src="assets/js/app.js"></script>
 </body>
 

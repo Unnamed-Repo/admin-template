@@ -14,8 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (menuLink) {
       menuLink.addEventListener("click", function (event) {
-        event.preventDefault();
-
         // Close all other submenus
         menuItems.forEach((otherItem) => {
           if (otherItem !== item) {
@@ -37,4 +35,61 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
+});
+
+// Sidebar collapsed when small devices
+const manageSidebar = () => {
+  const sidebar = document.querySelector(".sidebar-wrapper");
+  const appHeader = document.querySelector(".app-header");
+  if (!sidebar) return; // Prevent errors if sidebar is missing
+
+  const isSidebarClosed = sidebar.classList.contains("collapsed");
+  const isSmallScreen = window.innerWidth <= 1399;
+
+  console.log(isSidebarClosed, isSmallScreen, window.innerWidth);
+
+  if (isSmallScreen && !isSidebarClosed) {
+    sidebar.classList.add("collapsed");
+    appHeader.classList.add("collapsed");
+  } else if (isSidebarClosed || !isSmallScreen) {
+    sidebar.classList.remove("collapsed");
+    appHeader.classList.remove("collapsed");
+  }
+};
+window.addEventListener("resize", manageSidebar);
+document.addEventListener("DOMContentLoaded", manageSidebar);
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Sidebar collapsed by click
+  const collapseIcon = document.querySelector(".collapse-icon");
+  const sidebar = document.querySelector(".sidebar-wrapper");
+
+  if (collapseIcon && sidebar) {
+    collapseIcon.addEventListener("click", () => {
+      sidebar.classList.toggle("sidebar-fold");
+    });
+  }
+
+  //
+
+  document
+    .querySelector(".sidebar-menus")
+    .addEventListener("mouseenter", function () {
+      let sidebarWrapper = document.querySelector(".sidebar-wrapper");
+      if (sidebarWrapper.classList.contains("sidebar-fold")) {
+        sidebarWrapper.classList.remove("sidebar-fold");
+        sidebarWrapper.classList.add("sidebar-uncollapsed");
+      }
+    });
+
+  document
+    .querySelector(".sidebar-menus")
+    .addEventListener("mouseleave", function () {
+      let sidebarWrapper = document.querySelector(".sidebar-wrapper");
+
+      if (sidebarWrapper.classList.contains("sidebar-uncollapsed")) {
+        sidebarWrapper.classList.remove("sidebar-uncollapsed");
+        sidebarWrapper.classList.add("sidebar-fold");
+      }
+    });
 });
