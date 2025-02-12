@@ -2625,6 +2625,11 @@ input[type=radio]:checked ~ label::after {
   height: 70px;
   background-color: var(--white);
   border-bottom: 1px solid var(--border-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 @media (max-width: 575px), (max-width: 480px) {
   .app-header {
@@ -2768,6 +2773,7 @@ input[type=radio]:checked ~ label::after {
 .main-body {
   display: flex;
   min-height: 100vh;
+  padding-top: 70px;
 }
 .main-body .sidebar-wrapper {
   position: fixed;

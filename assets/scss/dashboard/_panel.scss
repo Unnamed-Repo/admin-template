@@ -8,6 +8,11 @@
     height: 70px;
     background-color: var(--white);
     border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 
     @media #{$xs},
     #{$xxs} {
@@ -180,7 +185,8 @@
 .main-body {
     display: flex;
     min-height: 100vh;
-
+    padding-top: 70px;
+    
     .sidebar-wrapper {
         position: fixed;
         top: 0;
