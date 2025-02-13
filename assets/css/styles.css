@@ -2787,6 +2787,163 @@ input[type=radio]:checked ~ label::after {
   line-height: 14.52px;
 }
 
+.notification-box {
+  margin: 10px;
+  border-radius: 8px;
+  width: 350px !important;
+}
+.notification-box .offcanvas-header {
+  border-bottom: 1px solid #ddd;
+}
+.notification-box .offcanvas-header .offcanvas-title {
+  color: var(--black);
+  margin-bottom: 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+.notification-box .offcanvas-header .offcanvas-title .count {
+  font-size: 12px;
+  border: 1px solid #ddd;
+  color: var(--primary);
+  padding: 3px;
+  border-radius: 8px;
+}
+.notification-box .offcanvas-header .btn-close {
+  font-size: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.notification-box .offcanvas-header .btn-close:hover {
+  border: 1px solid var(--primary);
+}
+.notification-box .notification-items {
+  overflow-y: auto;
+  height: calc(100vh - 70px);
+  padding-right: 10px;
+  padding-left: 10px;
+  position: relative;
+}
+.notification-box .notification-items::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.notification-box .notification-items::-webkit-scrollbar-track {
+  background: var(--white);
+  border-radius: 10px;
+}
+.notification-box .notification-items::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+.notification-box .notification-items .notification-item {
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.notification-box .notification-items .notification-item:hover {
+  border: 1px solid var(--primary);
+}
+.notification-box .notification-items .notification-item .icon {
+  border: 1px solid var(--primary);
+  padding: 5px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+}
+.notification-box .notification-items .notification-item .icon svg {
+  width: 20px;
+  height: 20px;
+}
+.notification-box .notification-items .notification-item h6 {
+  font-size: 14px;
+}
+.notification-box .notification-items .notification-item h6 .created {
+  font-size: 12px;
+  margin-top: 3px;
+  color: #595757;
+}
+.notification-box .notification-items .notification-item .unread-icon {
+  margin-left: auto;
+  color: var(--primary);
+}
+.notification-box .footer-menu {
+  position: sticky;
+  bottom: -18px;
+  background: var(--white);
+  width: 100%;
+  padding: 15px;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid #ddd;
+}
+.notification-box .footer-menu .read-btn {
+  border: 1px solid #ddd;
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.notification-box .footer-menu .read-btn:hover {
+  border: 1px solid var(--primary);
+}
+.notification-box .footer-menu .read-btn svg {
+  width: 18px;
+  height: 18px;
+}
+.notification-box .footer-menu .view-btn {
+  border: 1px solid #ddd;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: var(--black);
+  color: #fff;
+}
+.notification-box .footer-menu .view-btn:hover {
+  border: 1px solid var(--primary);
+}
+.notification-box .footer-menu .view-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.offcanvas-backdrop.show {
+  opacity: 1;
+  background-color: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(5px);
+}
+
 .main-body {
   display: flex;
   min-height: 100vh;
@@ -2897,8 +3054,8 @@ input[type=radio]:checked ~ label::after {
   background: rgb(22, 22, 22);
 }
 .main-body .sidebar-wrapper .sidebar-menus::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 5px;
+  height: 5px;
 }
 .main-body .sidebar-wrapper .sidebar-menus::-webkit-scrollbar-track {
   background: var(--black);

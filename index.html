@@ -60,16 +60,6 @@
                         <span class="value">40</span>
                      </span>
                   </button>
-                  <div class="offcanvas offcanvas-end" tabindex="-1" id="notificationsArea"
-                     aria-labelledby="notificationsAreaLabel">
-                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="notificationsAreaLabel">Notifications</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                     </div>
-                     <div class="offcanvas-body">
-                        ...
-                     </div>
-                  </div>
                </li>
                <li>
                   <button type="button" class="language-toggle">
@@ -108,6 +98,149 @@
          </div>
       </div>
    </header>
+
+   <div class="offcanvas offcanvas-end notification-box" tabindex="-1" id="notificationsArea"
+      aria-labelledby="notificationsAreaLabel">
+      <div class="offcanvas-header">
+         <h6 class="offcanvas-title" id="notificationsAreaLabel">
+            <span>Notifications</span>
+            <span class="count">40</span>
+         </h6>
+         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body notification-items">
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="message-circle"></i></div>
+            <h6>John sent a message<div class="created">5 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="thumbs-up"></i></div>
+            <h6>Emma liked your post<div class="created">10 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="message-square"></i></div>
+            <h6>Michael commented on your post<div class="created">15 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="user-plus"></i></div>
+            <h6>Sarah followed you<div class="created">20 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="shopping-cart"></i></div>
+            <h6>Alex purchased your product<div class="created">30 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="bell"></i></div>
+            <h6>David set a reminder<div class="created">35 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="file-text"></i></div>
+            <h6>Olivia shared a document<div class="created">40 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="credit-card"></i></div>
+            <h6>Henry made a payment<div class="created">45 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="star"></i></div>
+            <h6>Emma rated your service<div class="created">50 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="settings"></i></div>
+            <h6>System settings updated<div class="created">1 Hour Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="mail"></i></div>
+            <h6>Lucas sent you an email<div class="created">1 Hour Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="briefcase"></i></div>
+            <h6>New job posting available<div class="created">2 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="cloud-upload"></i></div>
+            <h6>Alice uploaded a file<div class="created">3 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="zap"></i></div>
+            <h6>System detected unusual activity<div class="created">4 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="user-x"></i></div>
+            <h6>Tom unfollowed you<div class="created">5 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="tag"></i></div>
+            <h6>Discount applied to your order<div class="created">6 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="calendar"></i></div>
+            <h6>Meeting scheduled for tomorrow<div class="created">7 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="map-pin"></i></div>
+            <h6>New location added to your profile<div class="created">8 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="upload"></i></div>
+            <h6>Your profile picture was updated<div class="created">9 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="shield-alert"></i></div>
+            <h6>Security alert: Login from new device<div class="created">10 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+      </div>
+      <div class="footer-menu">
+         <a href="" class="read-btn">
+            <i data-lucide="check-check"></i>
+            Mark All As Read
+         </a>
+         <a href="" class="view-btn">
+            <i data-lucide="eye"></i>
+            View All
+         </a>
+      </div>
+   </div>
 
    <main class="main-body">
       <aside class="sidebar-wrapper">
