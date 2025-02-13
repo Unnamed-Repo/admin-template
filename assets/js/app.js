@@ -43,17 +43,17 @@ const manageSidebar = () => {
   const appHeader = document.querySelector(".app-header");
   if (!sidebar) return; // Prevent errors if sidebar is missing
 
-  const isSidebarClosed = sidebar.classList.contains("collapsed");
+  const isSidebarClosed = sidebar.classList.contains("sidebar-fold");
   const isSmallScreen = window.innerWidth <= 1399;
 
   console.log(isSidebarClosed, isSmallScreen, window.innerWidth);
 
   if (isSmallScreen && !isSidebarClosed) {
-    sidebar.classList.add("collapsed");
-    appHeader.classList.add("collapsed");
+    sidebar.classList.add("sidebar-fold");
+    appHeader.classList.add("sidebar-fold");
   } else if (isSidebarClosed || !isSmallScreen) {
-    sidebar.classList.remove("collapsed");
-    appHeader.classList.remove("collapsed");
+    sidebar.classList.remove("sidebar-fold");
+    appHeader.classList.remove("sidebar-fold");
   }
 };
 window.addEventListener("resize", manageSidebar);
