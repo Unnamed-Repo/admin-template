@@ -2238,6 +2238,14 @@ input[type=radio]:checked ~ label::after {
     transform: rotate(360deg);
   }
 }
+@keyframes dropDownSlide {
+  100% {
+    margin-top: -1px;
+  }
+  0% {
+    margin-top: 8px;
+  }
+}
 /*----------------------------------------*/
 /*  Shortcodes
 /*----------------------------------------*/
@@ -2668,9 +2676,14 @@ input[type=radio]:checked ~ label::after {
   display: -webkit-flex;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 12px;
 }
-.app-header .right-menu ul {
+@media (max-width: 575px), only screen and (min-width: 576px) and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
+  .app-header .right-menu {
+    gap: 6px;
+  }
+}
+.app-header .right-menu .right-items {
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -2679,7 +2692,12 @@ input[type=radio]:checked ~ label::after {
   gap: 12px;
   align-items: center;
 }
-.app-header .right-menu ul li {
+@media (max-width: 575px), only screen and (min-width: 576px) and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
+  .app-header .right-menu .right-items {
+    gap: 6px;
+  }
+}
+.app-header .right-menu .right-items .right-menu {
   list-style: none;
 }
 .app-header .right-menu .clear-cache {
@@ -2713,6 +2731,10 @@ input[type=radio]:checked ~ label::after {
   font-size: 11px;
   font-weight: 700;
   justify-content: center;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   align-items: center;
 }
@@ -2720,13 +2742,9 @@ input[type=radio]:checked ~ label::after {
   border: 1px solid var(--primary);
 }
 .app-header .right-menu .language-area {
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
+  position: relative;
 }
-.app-header .right-menu .language-toggle {
+.app-header .right-menu .language-area .language-toggle {
   width: 123px;
   height: 40px;
   padding: 8px 16px 8px 16px;
@@ -2734,22 +2752,77 @@ input[type=radio]:checked ~ label::after {
   border-radius: 8px;
   border: 1px solid rgb(182, 182, 182);
   color: var(--black);
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   align-items: center;
 }
-.app-header .right-menu .language-toggle:hover {
+@media (max-width: 575px), only screen and (min-width: 576px) and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
+  .app-header .right-menu .language-area .language-toggle {
+    padding: 8px;
+    width: 100px;
+  }
+}
+.app-header .right-menu .language-area .language-toggle:hover {
   border: 1px solid var(--primary);
 }
-.app-header .right-menu .language-toggle span {
+.app-header .right-menu .language-area .language-toggle span {
   font-weight: 700;
   font-size: 13px;
   line-height: 15.73px;
 }
-.app-header .right-menu .language-toggle svg {
+.app-header .right-menu .language-area .language-toggle svg {
   width: 18px;
   height: 18px;
   top: 11px;
   left: 16px;
+}
+.app-header .right-menu .language-area .language-body {
+  position: absolute;
+  top: 45px;
+  background: var(--white);
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: #595757;
+  -webkit-box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
+  box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
+  animation-name: dropDownSlide;
+  -webkit-animation-name: dropDownSlide;
+  animation-duration: 0.3s;
+  -webkit-animation-duration: 0.3s;
+}
+.app-header .right-menu .language-area .language-body ul li {
+  list-style: none;
+  padding: 6px;
+  border-radius: 4px;
+  transition: all 0.1s;
+}
+.app-header .right-menu .language-area .language-body ul li:hover {
+  background-color: var(--black);
+  color: var(--primary);
+}
+.app-header .right-menu .language-area .language-body ul li a {
+  display: block;
+  font-weight: 500;
+  font-size: 13px;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.app-header .right-menu .language-area .language-body ul li a svg {
+  width: 16px;
+  height: 16px;
+}
+.app-header .right-menu .user-area {
+  position: relative;
 }
 .app-header .right-menu .user-area .user-info {
   display: flex;
@@ -2759,32 +2832,144 @@ input[type=radio]:checked ~ label::after {
   cursor: pointer;
   user-select: none;
 }
-.app-header .right-menu .user-area .user-avatar img {
+.app-header .right-menu .user-area .user-info .user-avatar img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  border: 1px solid #ddd;
+  padding: 2px;
+  -webkit-box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
+  box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
 }
-.app-header .right-menu .user-area .user-name {
+.app-header .right-menu .user-area .user-info .user-name {
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
 }
 @media (max-width: 575px), only screen and (min-width: 576px) and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
-  .app-header .right-menu .user-area .user-name {
+  .app-header .right-menu .user-area .user-info .user-name {
     display: none;
   }
 }
-.app-header .right-menu .user-area .user-name .user-name-text {
+.app-header .right-menu .user-area .user-info .user-name .user-name-text {
   font-size: 16px;
   font-weight: 700;
   color: var(--black);
   line-height: 19px;
   margin-bottom: 5px;
 }
-.app-header .right-menu .user-area .user-name .username {
+.app-header .right-menu .user-area .user-info .user-name .username {
   font-size: 12px;
   font-weight: 400;
   color: var(--text-color);
   line-height: 14.52px;
+}
+.app-header .right-menu .user-area .profile-dropdown {
+  background: var(--white);
+  position: absolute;
+  border: 1px solid rgb(221, 221, 221);
+  padding: 10px;
+  min-width: 210px;
+  margin-top: 10px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
+  box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
+  animation-name: dropDownSlide;
+  -webkit-animation-name: dropDownSlide;
+  animation-duration: 0.3s;
+  -webkit-animation-duration: 0.3s;
+}
+.app-header .right-menu .user-area .profile-dropdown .dropdown-user-info {
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  gap: 16px;
+  width: auto;
+  height: 40px;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 10px;
+}
+.app-header .right-menu .user-area .profile-dropdown .dropdown-user-info .user-avatar img {
+  width: 40px;
+  height: 40px;
+  width: 100%;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  padding: 2px;
+  -webkit-box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
+  box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
+}
+.app-header .right-menu .user-area .profile-dropdown .dropdown-user-info .user-name {
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+.app-header .right-menu .user-area .profile-dropdown .dropdown-user-info .user-name .user-name-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 19px;
+  margin-bottom: 5px;
+}
+.app-header .right-menu .user-area .profile-dropdown .dropdown-user-info .user-name .username {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-color);
+  line-height: 14.52px;
+}
+.app-header .right-menu .user-area .profile-dropdown .profile-menu-list {
+  border-top: 1px solid rgb(221, 221, 221);
+}
+.app-header .right-menu .user-area .profile-dropdown .profile-menu-list .profile-menu-item {
+  list-style: none;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.1s;
+}
+.app-header .right-menu .user-area .profile-dropdown .profile-menu-list .profile-menu-item:hover {
+  background-color: var(--black);
+  color: var(--primary);
+}
+.app-header .right-menu .user-area .profile-dropdown .profile-menu-list .profile-menu-item:hover a .icon {
+  border: 1px solid var(--primary);
+}
+.app-header .right-menu .user-area .profile-dropdown .profile-menu-list .profile-menu-item a {
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.app-header .right-menu .user-area .profile-dropdown .profile-menu-list .profile-menu-item a .icon {
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  padding: 5px;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app-header .right-menu .user-area .profile-dropdown .profile-menu-list .profile-menu-item a .icon svg {
+  width: 18px;
+  height: 18px;
+}
+.app-header .right-menu .user-area .profile-dropdown .profile-menu-list .profile-menu-item a span {
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .notification-box {
@@ -2890,6 +3075,8 @@ input[type=radio]:checked ~ label::after {
   justify-content: space-between;
   gap: 15px;
   border-top: 1px solid #ddd;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 .notification-box .footer-menu .read-btn {
   border: 1px solid #ddd;
@@ -3086,6 +3273,10 @@ input[type=radio]:checked ~ label::after {
   margin-bottom: 2px;
   padding: 12px 10px;
   border-radius: 12px;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   align-items: center;
 }
@@ -3112,6 +3303,7 @@ input[type=radio]:checked ~ label::after {
 }
 .main-body .sidebar-wrapper .sidebar-menus .menu-list .menu-item .submenu-items .submenu-item {
   list-style: none;
+  margin-left: 15px;
 }
 .main-body .sidebar-wrapper .sidebar-menus .menu-list .menu-item .submenu-items .submenu-item .submenu-link {
   color: rgb(153, 153, 153);

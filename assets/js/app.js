@@ -46,8 +46,6 @@ const manageSidebar = () => {
   const isSidebarClosed = sidebar.classList.contains("sidebar-fold");
   const isSmallScreen = window.innerWidth <= 1399;
 
-  console.log(isSidebarClosed, isSmallScreen, window.innerWidth);
-
   if (isSmallScreen && !isSidebarClosed) {
     sidebar.classList.add("sidebar-fold");
     appHeader.classList.add("sidebar-fold");
@@ -92,4 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
         sidebarWrapper.classList.add("sidebar-fold");
       }
     });
+});
+
+// ToolTip
+var tooltipTriggerList = [].slice.call(
+  document.querySelectorAll('[data-bs-toggle="tooltip"]')
+);
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl);
 });

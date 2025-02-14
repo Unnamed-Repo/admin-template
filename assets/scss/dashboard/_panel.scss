@@ -65,14 +65,22 @@
     .right-menu {
         @include flexbox();
         align-items: center;
-        gap: 1rem;
+        gap: 12px;
 
-        ul {
+        @media #{$xs,$sm,$md,$lg} {
+            gap: 6px;
+        }
+
+        .right-items {
             @include flexbox();
             gap: 12px;
             align-items: center;
 
-            li {
+            @media #{$xs,$sm,$md,$lg} {
+                gap: 6px;
+            }
+
+            .right-menu {
                 list-style: none;
             }
         }
@@ -106,7 +114,7 @@
                 font-size: 11px;
                 font-weight: 700;
                 justify-content: center;
-                display: flex;
+                @include flexbox;
                 align-items: center;
             }
 
@@ -116,39 +124,91 @@
         }
 
         .language-area {
-            @include flexbox();
-        }
+            position: relative;
 
-        .language-toggle {
-            width: 123px;
-            height: 40px;
-            padding: 8px 16px 8px 16px;
-            gap: 6px;
-            border-radius: 8px;
-            border: 1px solid rgba(182, 182, 182, 1);
-            color: var(--black);
-            display: flex;
-            align-items: center;
+            .language-toggle {
+                width: 123px;
+                height: 40px;
+                padding: 8px 16px 8px 16px;
+                gap: 6px;
+                border-radius: 8px;
+                border: 1px solid rgba(182, 182, 182, 1);
+                color: var(--black);
+                @include flexbox;
+                align-items: center;
 
-            &:hover {
-                border: 1px solid var(--primary);
+                @media #{$xs,$sm,$md,$lg} {
+                    padding: 8px;
+                    width: 100px;
+                }
+
+                &:hover {
+                    border: 1px solid var(--primary);
+                }
+
+                span {
+                    font-weight: 700;
+                    font-size: 13px;
+                    line-height: 15.73px;
+                }
+
+                svg {
+                    width: 18px;
+                    height: 18px;
+                    top: 11px;
+                    left: 16px;
+                }
             }
 
-            span {
-                font-weight: 700;
-                font-size: 13px;
-                line-height: 15.73px;
-            }
+            .language-body {
+                position: absolute;
+                top: 45px;
+                background: var(--white);
+                width: 100%;
+                border: 1px solid #ddd;
+                padding: 8px;
+                border-radius: 8px;
+                box-shadow: #595757;
+                -webkit-box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+                box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+                animation-name: dropDownSlide;
+                -webkit-animation-name: dropDownSlide;
+                animation-duration: 0.3s;
+                -webkit-animation-duration: 0.3s;
 
-            svg {
-                width: 18px;
-                height: 18px;
-                top: 11px;
-                left: 16px;
+                ul {
+                    li {
+                        list-style: none;
+                        padding: 6px;
+                        border-radius: 4px;
+                        transition: all 0.1s;
+
+                        &:hover {
+                            background-color: var(--black);
+                            color: var(--primary);
+                        }
+
+                        a {
+                            display: block;
+                            font-weight: 500;
+                            font-size: 13px;
+                            @include flexbox();
+                            align-items: center;
+                            justify-content: space-between;
+
+                            svg {
+                                width: 16px;
+                                height: 16px;
+                            }
+                        }
+                    }
+                }
             }
         }
 
         .user-area {
+            position: relative;
+
             .user-info {
                 display: flex;
                 gap: 16px;
@@ -156,38 +216,152 @@
                 height: 40px;
                 cursor: pointer;
                 user-select: none;
+
+                .user-avatar {
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        border: 1px solid #ddd;
+                        padding: 2px;
+                        -webkit-box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+                        box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+                    }
+                }
+
+                .user-name {
+                    @include flexbox;
+                    flex-direction: column;
+
+                    @media #{$xs,$sm,$md,$lg} {
+                        display: none;
+                    }
+
+                    .user-name-text {
+                        font-size: 16px;
+                        font-weight: 700;
+                        color: var(--black);
+                        line-height: 19px;
+                        margin-bottom: 5px;
+                    }
+
+
+
+                    .username {
+                        font-size: 12px;
+                        font-weight: 400;
+                        color: var(--text-color);
+                        line-height: 14.52px;
+                    }
+                }
             }
 
-            .user-avatar {
 
-                img {
-                    width: 40px;
+
+            .profile-dropdown {
+                background: var(--white);
+                position: absolute;
+                border: 1px solid rgba(221, 221, 221, 1);
+                padding: 10px;
+                min-width: 210px;
+                margin-top: 10px;
+                border-radius: 8px;
+                -webkit-box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+                box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+                animation-name: dropDownSlide;
+                -webkit-animation-name: dropDownSlide;
+                animation-duration: 0.3s;
+                -webkit-animation-duration: 0.3s;
+
+                .dropdown-user-info {
+                    @include flexbox;
+                    gap: 16px;
+                    width: auto;
                     height: 40px;
-                    border-radius: 50%;
+                    cursor: pointer;
+                    user-select: none;
+                    margin-bottom: 10px;
+
+                    .user-avatar {
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            width: 100%;
+                            border-radius: 50%;
+                            border: 1px solid #ddd;
+                            padding: 2px;
+                            -webkit-box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+                            box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+                        }
+                    }
+
+                    .user-name {
+                        @include flexbox;
+                        flex-direction: column;
+
+                        .user-name-text {
+                            font-size: 16px;
+                            font-weight: 700;
+                            color: var(--black);
+                            line-height: 19px;
+                            margin-bottom: 5px;
+                        }
+
+                        .username {
+                            font-size: 12px;
+                            font-weight: 400;
+                            color: var(--text-color);
+                            line-height: 14.52px;
+                        }
+                    }
                 }
-            }
 
-            .user-name {
-                display: flex;
-                flex-direction: column;
+                .profile-menu-list {
+                    border-top: 1px solid rgba(221, 221, 221, 1);
 
-                @media #{$xs,$sm,$md,$lg} {
-                    display: none;
-                }
+                    .profile-menu-item {
+                        list-style: none;
+                        padding: 8px;
+                        border-radius: 8px;
+                        transition: all 0.1s;
 
-                .user-name-text {
-                    font-size: 16px;
-                    font-weight: 700;
-                    color: var(--black);
-                    line-height: 19px;
-                    margin-bottom: 5px;
-                }
+                        &:hover {
+                            background-color: var(--black);
+                            color: var(--primary);
 
-                .username {
-                    font-size: 12px;
-                    font-weight: 400;
-                    color: var(--text-color);
-                    line-height: 14.52px;
+                            a {
+                                .icon {
+                                    border: 1px solid var(--primary);
+                                }
+                            }
+                        }
+
+                        a {
+                            @include flexbox();
+                            align-items: center;
+                            gap: 8px;
+
+                            .icon {
+                                border-radius: 50%;
+                                border: 1px solid #ddd;
+                                padding: 5px;
+                                @include flexbox();
+                                align-items: center;
+                                justify-content: center;
+
+                                svg {
+                                    width: 18px;
+                                    height: 18px;
+                                }
+                            }
+
+                            span {
+                                font-size: 14px;
+                                font-weight: 500;
+                            }
+
+                        }
+                    }
                 }
             }
 
@@ -310,6 +484,8 @@
         justify-content: space-between;
         gap: 15px;
         border-top: 1px solid #ddd;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
 
         .read-btn {
             border: 1px solid #ddd;
@@ -551,7 +727,7 @@
                         margin-bottom: 2px;
                         padding: 12px 10px;
                         border-radius: 12px;
-                        display: flex;
+                        @include flexbox;
                         align-items: center;
 
                         &.active {
@@ -582,6 +758,7 @@
 
                         .submenu-item {
                             list-style: none;
+                            margin-left: 15px;
 
                             .submenu-link {
                                 color: rgba(153, 153, 153, 1);

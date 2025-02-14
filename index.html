@@ -28,9 +28,10 @@
       </div>
       <div class="right-content">
          <div class="right-menu">
-            <ul>
-               <li>
-                  <div class="clear-cache">
+            <ul class="right-items">
+               <li class="right-menu">
+                  <div class="clear-cache" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                     data-bs-title="Clear Cache">
                      <a href="" class="clear-cache-btn">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path
@@ -44,7 +45,7 @@
                      </a>
                   </div>
                </li>
-               <li>
+               <li class="right-menu" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Notifications">
                   <button type="button" class="notifications" data-bs-toggle="offcanvas"
                      data-bs-target="#notificationsArea" aria-controls="offcanvasRight" aria-label="Open notifications">
                      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,8 +62,8 @@
                      </span>
                   </button>
                </li>
-               <li>
-                  <button type="button" class="language-toggle">
+               <li class="right-menu language-area">
+                  <button type="button" class="language-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_229_769)">
                            <path
@@ -82,17 +83,84 @@
                      </svg>
 
                   </button>
+
+                  <div class="language-body dropdown-menu">
+                     <ul>
+                        <li>
+                           <a href="">
+                              English
+                              <i data-lucide="circle-check"></i>
+                           </a>
+                        </li>
+                        <li><a href="">Bangla</a></li>
+                        <li><a href="">Germany</a></li>
+                        <li><a href="">Indonesian</a></li>
+                     </ul>
+                  </div>
                </li>
             </ul>
             <div class="user-area">
-               <div class="user-info">
+               <div class="user-info" data-bs-toggle="dropdown" aria-expanded="false">
                   <div class="user-avatar">
                      <img src="assets/images/profile/pic.png" alt="User Avatar">
                   </div>
                   <div class="user-name">
-                     <h4 class="user-name-text">Sajjad Hossain</h4>
+                     <h4 class="user-name-text">Sajjad Hossain Shohag</h4>
                      <span class="username">@sajjadhossainshohag</span>
                   </div>
+               </div>
+               <div class="profile-dropdown dropdown-menu">
+                  <div class="dropdown-user-info">
+                     <div class="user-avatar">
+                        <img src="assets/images/profile/pic.png" alt="User Avatar">
+                     </div>
+                     <div class="user-name">
+                        <h4 class="user-name-text">Sajjad Hossain</h4>
+                        <span class="username">@sajjadhossainshohag</span>
+                     </div>
+                  </div>
+                  <ul class="profile-menu-list">
+                     <li class="profile-menu-item">
+                        <a href="">
+                           <div class="icon">
+                              <i data-lucide="user"></i>
+                           </div>
+                           <span>View Profile</span>
+                        </a>
+                     </li>
+                     <li class="profile-menu-item">
+                        <a href="">
+                           <div class="icon">
+                              <i data-lucide="lock-keyhole"></i>
+                           </div>
+                           <span>Change Password</span>
+                        </a>
+                     </li>
+                     <li class="profile-menu-item">
+                        <a href="">
+                           <div class="icon">
+                              <i data-lucide="bolt"></i>
+                           </div>
+                           <span>Settings</span>
+                        </a>
+                     </li>
+                     <li class="profile-menu-item">
+                        <a href="">
+                           <div class="icon">
+                              <i data-lucide="bolt"></i>
+                           </div>
+                           <span>Settings</span>
+                        </a>
+                     </li>
+                     <li class="profile-menu-item">
+                        <a href="">
+                           <div class="icon">
+                              <i data-lucide="circle-arrow-right"></i>
+                           </div>
+                           <span>Log Out</span>
+                        </a>
+                     </li>
+                  </ul>
                </div>
             </div>
          </div>
