@@ -100,6 +100,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 
 // Quick access menu number counter
 const quickAccessItems = document.querySelectorAll(".quick-access-item");
+const appStatisticsItems = document.querySelectorAll(".app-statistics-item");
 
 function animateCounter(element, start, end, duration) {
   const range = end - start;
@@ -123,6 +124,16 @@ function animateCounter(element, start, end, duration) {
 
 quickAccessItems.forEach((item) => {
   const countElement = item.querySelector(".count");
+  const targetNumber = parseInt(countElement.textContent.replace(/,/g, ""));
+
+  countElement.textContent = "0";
+  animateCounter(countElement, 0, targetNumber, 2000);
+});
+
+appStatisticsItems.forEach((item) => {
+  const countElement = item.querySelector(
+    ".second-item .statistics h4 .counter"
+  );
   const targetNumber = parseInt(countElement.textContent.replace(/,/g, ""));
 
   countElement.textContent = "0";

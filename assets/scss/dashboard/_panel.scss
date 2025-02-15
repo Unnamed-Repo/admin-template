@@ -12,6 +12,7 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 999;
 
     @media #{$xs},
     #{$xxs} {
@@ -37,29 +38,6 @@
             height: 40px;
         }
 
-        // .search-bar {
-        //     @include flexbox();
-        //     align-items: center;
-
-        //     .search-icon {
-        //         position: absolute;
-        //         left: 42px;
-
-        //         @media #{$xs} {
-        //             left: 22px;
-        //         }
-        //     }
-
-        //     .search-input {
-        //         text-indent: 20px;
-
-        //         &:focus {
-        //             .search-icon {
-        //                 color: #fff;
-        //             }
-        //         }
-        //     }
-        // }
     }
 
     .right-menu {
@@ -368,6 +346,21 @@
 
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--white);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
 .notification-box {
     margin: 10px;
     border-radius: 8px;
@@ -409,20 +402,7 @@
         padding-left: 10px;
         position: relative;
 
-        &::-webkit-scrollbar {
-            width: 5px;
-            height: 5px;
-        }
 
-        &::-webkit-scrollbar-track {
-            background: var(--white);
-            border-radius: 10px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 10px;
-        }
 
         .notification-item {
             @include flexbox();
@@ -627,7 +607,7 @@
         height: 100vh;
         border-right: 1px solid rgba(215, 215, 215, 1);
         transition: transform 0.3s ease-in-out;
-        z-index: 10;
+        z-index: 999;
 
         &.collapsed {
             transform: translateX(-100%);
@@ -760,21 +740,6 @@
             overflow-y: auto;
             background: rgb(22, 22, 22);
 
-            &::-webkit-scrollbar {
-                width: 5px;
-                height: 5px;
-            }
-
-            &::-webkit-scrollbar-track {
-                background: var(--black);
-                border-radius: 10px;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background: var(--primary);
-                border-radius: 10px;
-            }
-
             .menu-list {
                 .menu-item {
                     list-style: none;
@@ -860,12 +825,17 @@
         }
     }
 
+    .sidebar-wrapper.sidebar-fold+.main-content {
+        margin-left: 70px;
+    }
+
     .main-content {
         margin-left: 280px;
         flex-grow: 1;
         padding: 20px;
         min-height: calc(100vh - 70px);
         transition: margin-left 0.3s ease-in-out;
+        overflow-y: auto;
 
         .page-title {
             font-size: 30px;
@@ -1035,9 +1005,196 @@
                 }
             }
         }
-    }
 
-    .sidebar-wrapper.sidebar-fold+.main-content {
-        margin-left: 70px;
+        .app-statistics-row {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            @include flexbox;
+            gap: 10px;
+            flex-wrap: wrap;
+
+            .app-statistics-item {
+                background: var(--white);
+                height: 150px;
+                width: calc(100% / 4 - 10px);
+                border-radius: 8px;
+                padding: 20px;
+                position: relative;
+                z-index: 100;
+
+                @media #{$xs,$sm} {
+                    width: 100%;
+                }
+
+                @media #{$md} {
+                    width: calc(100% / 2 - 10px);
+                }
+
+                @media #{$lg} {
+                    width: calc(100% / 3 - 10px);
+                }
+
+                @media #{$xl} {
+                    width: calc(100% / 4 - 10px);
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    left: 50px;
+                    background: url('../images/shapes/dashboard/statistic-shape.png') no-repeat;
+                    z-index: -1;
+                }
+
+                &:nth-of-type(1) .first-item .icon {
+                    background: rgba(13, 117, 216, 1); // Blue
+                }
+
+                &:nth-of-type(2) .first-item .icon {
+                    background: rgba(213, 13, 216, 1); // Pink
+                }
+
+                &:nth-of-type(3) .first-item .icon {
+                    background: rgba(91, 13, 216, 1); // Purple
+                }
+
+                &:nth-of-type(4) .first-item .icon {
+                    background: rgba(46, 184, 92, 1); // Green
+                }
+
+                &:nth-of-type(5) .first-item .icon {
+                    background: rgba(216, 67, 21, 1); // Orange-Red
+                }
+
+                &:nth-of-type(6) .first-item .icon {
+                    background: rgba(32, 84, 147, 1); // Navy Blue
+                }
+
+                &:nth-of-type(7) .first-item .icon {
+                    background: rgba(13, 166, 166, 1); // Teal
+                }
+
+                &:nth-of-type(8) .first-item .icon {
+                    background: rgba(147, 32, 147, 1); // Magenta
+                }
+
+                &:nth-of-type(9) .first-item .icon {
+                    background: rgba(184, 184, 46, 1); // Yellow
+                }
+
+                &:nth-of-type(10) .first-item .icon {
+                    background: rgba(92, 153, 13, 1); // Lime Green
+                }
+
+                &:nth-of-type(11) .first-item .icon {
+                    background: rgba(216, 89, 89, 1); // Light Red
+                }
+
+                &:nth-of-type(12) .first-item .icon {
+                    background: rgba(75, 75, 216, 1); // Royal Blue
+                }
+
+                &:nth-of-type(13) .first-item .icon {
+                    background: rgba(64, 192, 192, 1); // Cyan
+                }
+
+                &:nth-of-type(14) .first-item .icon {
+                    background: rgba(176, 58, 176, 1); // Deep Pink
+                }
+
+                &:nth-of-type(15) .first-item .icon {
+                    background: rgba(189, 189, 57, 1); // Gold
+                }
+
+                &:nth-of-type(16) .first-item .icon {
+                    background: rgba(67, 160, 71, 1); // Forest Green
+                }
+
+                &:nth-of-type(17) .first-item .icon {
+                    background: rgba(198, 40, 40, 1); // Crimson
+                }
+
+                &:nth-of-type(18) .first-item .icon {
+                    background: rgba(41, 98, 255, 1); // Bright Blue
+                }
+
+                &:nth-of-type(19) .first-item .icon {
+                    background: rgba(0, 150, 136, 1); // Dark Cyan
+                }
+
+                &:nth-of-type(20) .first-item .icon {
+                    background: rgba(205, 180, 20, 1); // Dark Yellow
+                }
+
+                &:nth-of-type(21) .first-item .icon {
+                    background: rgba(13, 117, 216, 1); // Blue
+                }
+
+                &:nth-of-type(22) .first-item .icon {
+                    background: rgba(213, 13, 216, 1); // Pink
+                }
+
+                .first-item,
+                .second-item {
+                    @include flexbox;
+                    gap: 10px;
+                    margin-bottom: 20px;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                .first-item {
+                    .icon {
+                        background: var(--primary);
+                        border-radius: 50%;
+                        padding: 10px;
+                        color: var(--white);
+
+                        svg {
+                            width: 18px;
+                            height: 18px;
+                        }
+                    }
+
+
+                    .link-icon {
+                        color: var(--black);
+                    }
+                }
+
+                .second-item {
+                    .statistics {
+                        .title {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: var(--black);
+                        }
+
+                        h4 {
+                            font-size: 24px;
+                            font-weight: 700;
+                            color: var(--black);
+                        }
+                    }
+
+                    .percent {
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: var(--black);
+                        background: rgba(229, 255, 241, 1);
+                        color: rgba(0, 174, 78, 1);
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                    }
+
+                }
+
+            }
+        }
     }
 }
+
+
