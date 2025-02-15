@@ -68,8 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  //
-
   document
     .querySelector(".sidebar-menus")
     .addEventListener("mouseenter", function () {
@@ -98,4 +96,20 @@ var tooltipTriggerList = [].slice.call(
 );
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl);
+});
+
+// Quick access menu number counter
+const quickAccessItems = document.querySelectorAll(".quick-access-item");
+quickAccessItems.forEach((item, index) => {
+  const countElement = item.querySelector(".count");
+  const count = parseInt(countElement.textContent.replace(/,/g, ''));
+
+  const counter = new countUp.CountUp(countElement, count, {
+    duration: 2.5,
+    useEasing: true,
+    useGrouping: true,
+    separator: ",",
+  });
+
+  counter.start();
 });
