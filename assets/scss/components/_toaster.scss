@@ -1,0 +1,92 @@
+@use '../utils' as *;
+
+.toast-area {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    width: auto;
+    max-width: 400px;
+    transform: translateX(-50%);
+    background: var(--black);
+    color: var(--white);
+    border-radius: 8px;
+    padding: 10px 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    z-index: 99999;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        z-index: -1;
+        animation: fillOpacity 5s linear forwards;
+    }
+
+    animation: fadeOut 0.5s ease-in-out 5s forwards;
+
+    .icon {
+        color: var(--primary);
+        border: 1px solid var(--primary);
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .text {
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .close-icon {
+        color: var(--danger);
+        border: 1px solid var(--danger);
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    &.danger {
+        .icon {
+            color: var(--danger);
+        }
+    }
+}
+
+/* Keyframes for the "filling" effect */
+@keyframes fillOpacity {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+/* Keyframes for fading out */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
