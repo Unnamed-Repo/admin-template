@@ -6,37 +6,39 @@
 
 // Badge
 .app-badge {
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: capitalize;
-    display: inline-block;
-    line-height: 1;
-    text-align: center;
-    position: relative;
-    background-color: var(--white);
-    padding: 9px 20px;
-    color: var(--primary);
-    border-radius: 8px;
-	&.primary {
-		color: var(--primary);
-		background-color: rgba($primary, $alpha: 0.2);
-	}
-	&.warning {
-		color: var(--warning);
-		background-color: rgba($warning, $alpha: 0.2);
-	}
-	&.danger {
-		color: var(--danger);
-		background-color: rgba($danger, $alpha: 0.2);
-	}
+	font-size: 14px;
+	font-weight: 400;
+	text-transform: capitalize;
+	display: inline-block;
+	line-height: 1;
+	text-align: center;
+	position: relative;
+	background-color: var(--white);
+	padding: 5px 12px;
+	color: var(--success);
+	border-radius: 8px;
+	border: 1px solid var(--border-color);
+
 	&.success {
+		background-color: rgba(240, 253, 244, 1);
 		color: var(--success);
-		background-color: rgba($success, $alpha: 0.2);
 	}
+
+	&.warning {
+		color: rgba(255, 165, 0, 1);
+		background: rgba(255, 165, 0, 0.1);
+	}
+
+	&.danger {
+		color: rgba(255, 0, 0, 1);
+		background: rgba(255, 0, 0, 0.1);
+	}
+
 	&.black {
 		color: var(--black);
 		background-color: rgba($black, $alpha: 0.2);
 	}
+
 	&.purple {
 		background: rgba($purple, $alpha: 0.1);
 		border-radius: 10px;
