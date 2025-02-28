@@ -139,3 +139,6 @@ appStatisticsItems.forEach((item) => {
   countElement.textContent = "0";
   animateCounter(countElement, 0, targetNumber, 2000);
 });
+
+// Init nice select
+$(".nice-select").niceSelect();

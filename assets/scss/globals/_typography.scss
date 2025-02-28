@@ -207,19 +207,18 @@ input[type="password"],
 textarea {
     outline: none;
     background-color: transparent;
-    height: 46px;
+	height: 40px;
     width: 100%;
     font-size: 14px;
     border: 1px solid rgba($black, $alpha: .1);
-    padding: 0 20px;
-    color: var(--text-primary);
+    padding: 0 10px;
 	font-size: 14px;
-    border-radius: 10px;
+    border-radius: 6px;
 	@include app-placeholder {
 		font-size: 14px;
 	}
 	&:focus {
-		border-color: var(--secondary);
+		border-color: var(--primary);
 	}
 }
 

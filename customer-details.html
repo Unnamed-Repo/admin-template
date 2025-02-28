@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Customer Details | RockAdmin</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="assets/css/styles.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+</head>
+
+<body>
+
+   <!--[if lte IE 9]>
+   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+   <![endif]-->
+
+   <header class="app-header">
+      <div class="left-content">
+         <!-- <div class="search-bar">
+            <span class="search-icon" id="searchMenu"><i data-lucide="search"></i></span>
+            <input type="text" name="search_menu" class="search-input" placeholder="Search Menu...">
+         </div> -->
+      </div>
+      <div class="right-content">
+         <div class="right-menu">
+            <ul class="right-items">
+               <li class="right-menu">
+                  <div class="clear-cache" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                     data-bs-title="Clear Cache">
+                     <a href="" class="clear-cache-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path
+                              d="M5.83333 17.5L2.25 13.9167C1.41667 13.0833 1.41667 11.8333 2.25 11.0833L10.25 3.08333C11.0833 2.25 12.3333 2.25 13.0833 3.08333L17.75 7.75C18.5833 8.58333 18.5833 9.83333 17.75 10.5833L10.8333 17.5"
+                              stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                           <path d="M18.3334 17.5H5.83337" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                           <path d="M4.16663 9.16667L11.6666 16.6667" stroke="#1D1D1D" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                     </a>
+                  </div>
+               </li>
+               <li class="right-menu" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Notifications">
+                  <button type="button" class="notifications" data-bs-toggle="offcanvas"
+                     data-bs-target="#notificationsArea" aria-controls="offcanvasRight" aria-label="Open notifications">
+                     <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                           d="M8.80115 18.4286C8.95161 18.6892 9.16802 18.9055 9.42861 19.056C9.68921 19.2064 9.98481 19.2856 10.2857 19.2856C10.5866 19.2856 10.8822 19.2064 11.1428 19.056C11.4034 18.9055 11.6198 18.6892 11.7703 18.4286"
+                           stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                           d="M2.79597 13.5651C2.68399 13.6879 2.6101 13.8405 2.58327 14.0044C2.55644 14.1684 2.57784 14.3366 2.64486 14.4886C2.71188 14.6406 2.82163 14.7699 2.96076 14.8607C3.09989 14.9515 3.26241 14.9999 3.42854 15H17.1428C17.3089 15.0001 17.4715 14.9519 17.6107 14.8612C17.7499 14.7706 17.8598 14.6415 17.927 14.4896C17.9942 14.3377 18.0158 14.1695 17.9892 14.0055C17.9626 13.8416 17.8889 13.6889 17.7771 13.566C16.6371 12.3909 15.4285 11.142 15.4285 7.28572C15.4285 5.92175 14.8867 4.61364 13.9222 3.64917C12.9578 2.6847 11.6497 2.14286 10.2857 2.14286C8.92171 2.14286 7.6136 2.6847 6.64913 3.64917C5.68466 4.61364 5.14282 5.92175 5.14282 7.28572C5.14282 11.142 3.9334 12.3909 2.79597 13.5651Z"
+                           stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                     </svg>
+
+                     <span class="notification-count">
+                        <span class="value">40</span>
+                     </span>
+                  </button>
+               </li>
+               <li class="right-menu language-area">
+                  <button type="button" class="language-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_229_769)">
+                           <path
+                              d="M9 18C13.9556 18 18 13.9553 18 9C18 4.04437 13.9553 0 9 0C4.04441 0 0 4.04469 0 9C0 13.9556 4.04469 18 9 18ZM11.67 16.4833C12.18 15.8316 12.5708 15.0544 12.8644 14.2731H14.9374C14.059 15.2613 12.9387 16.0292 11.67 16.4833ZM15.7297 13.2188H13.2054C13.5166 12.0871 13.6991 10.8325 13.7379 9.52734H16.9274C16.8385 10.8769 16.4113 12.1354 15.7297 13.2188ZM15.7297 4.78125C16.4113 5.86459 16.8385 7.12308 16.9274 8.47266H13.7379C13.6991 7.16752 13.5166 5.91286 13.2054 4.78125H15.7297ZM14.9374 3.72656H12.8644C12.5709 2.94592 12.1801 2.16858 11.67 1.51675C12.9387 1.97079 14.059 2.73867 14.9374 3.72656ZM9.52734 1.1449C10.5622 1.49565 11.3046 2.7264 11.7292 3.72656H9.52734V1.1449ZM9.52734 4.78125H12.1088C12.4441 5.89141 12.6413 7.15089 12.6829 8.47266H9.52734V4.78125ZM9.52734 9.52699H12.6829C12.6413 10.8491 12.4441 12.1086 12.1088 13.2188H9.52734V9.52699ZM9.52734 14.2731H11.7292C11.3039 15.2753 10.5614 16.5047 9.52734 16.8551V14.2731ZM3.0626 14.2734H5.13562C5.42911 15.0541 5.81994 15.8314 6.33002 16.4833C5.06134 16.0292 3.94098 15.2613 3.0626 14.2734ZM8.47266 16.8551C7.43868 16.5047 6.69618 15.2754 6.27079 14.2734H8.47266V16.8551ZM8.47266 13.2188H5.89124C5.55592 12.1086 5.35866 10.8491 5.31714 9.52734H8.47266V13.2188ZM8.47266 8.47266H5.31714C5.35866 7.15089 5.55592 5.89141 5.89124 4.78125H8.47266V8.47266ZM8.47266 1.1449V3.72656H6.27079C6.69614 2.72468 7.43861 1.49537 8.47266 1.1449ZM6.32999 1.51675C5.82005 2.16837 5.42921 2.94557 5.13559 3.72656H3.0626C3.94098 2.73867 5.06134 1.97075 6.32999 1.51675ZM2.27029 4.7809H4.79464C4.48344 5.91286 4.30088 7.16752 4.26206 8.47266H1.07262C1.16149 7.12308 1.58871 5.86459 2.27029 4.7809ZM1.07262 9.52734H4.26206C4.30088 10.8325 4.48344 12.0871 4.79464 13.2188H2.27029C1.58871 12.1354 1.16149 10.8769 1.07262 9.52734Z"
+                              fill="#1D1D1D" />
+                        </g>
+                        <defs>
+                           <clipPath id="clip0_229_769">
+                              <rect width="18" height="18" fill="white" />
+                           </clipPath>
+                        </defs>
+                     </svg>
+                     <span>English</span>
+                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.5 5.25L7 8.75L10.5 5.25" stroke="black" stroke-opacity="0.4" stroke-width="1.5"
+                           stroke-linecap="round" stroke-linejoin="round" />
+                     </svg>
+
+                  </button>
+
+                  <div class="language-body dropdown-menu">
+                     <ul>
+                        <li>
+                           <a href="">
+                              English
+                              <i data-lucide="circle-check"></i>
+                           </a>
+                        </li>
+                        <li><a href="">Bangla</a></li>
+                        <li><a href="">Germany</a></li>
+                        <li><a href="">Indonesian</a></li>
+                     </ul>
+                  </div>
+               </li>
+            </ul>
+            <div class="user-area">
+               <div class="user-info" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="user-avatar">
+                     <img src="assets/images/profile/pic.png" alt="User Avatar">
+                  </div>
+                  <div class="user-name">
+                     <h4 class="user-name-text">Sajjad Hossain Shohag</h4>
+                     <span class="username">@sajjadhossainshohag</span>
+                  </div>
+               </div>
+               <div class="profile-dropdown dropdown-menu">
+                  <div class="dropdown-user-info">
+                     <div class="user-avatar">
+                        <img src="assets/images/profile/pic.png" alt="User Avatar">
+                     </div>
+                     <div class="user-name">
+                        <h4 class="user-name-text">Sajjad Hossain</h4>
+                        <span class="username">@sajjadhossainshohag</span>
+                     </div>
+                  </div>
+                  <ul class="profile-menu-list">
+                     <li class="profile-menu-item">
+                        <a href="">
+                           <div class="icon">
+                              <i data-lucide="user"></i>
+                           </div>
+                           <span>View Profile</span>
+                        </a>
+                     </li>
+                     <li class="profile-menu-item">
+                        <a href="">
+                           <div class="icon">
+                              <i data-lucide="lock-keyhole"></i>
+                           </div>
+                           <span>Change Password</span>
+                        </a>
+                     </li>
+                     <li class="profile-menu-item">
+                        <a href="">
+                           <div class="icon">
+                              <i data-lucide="bolt"></i>
+                           </div>
+                           <span>Settings</span>
+                        </a>
+                     </li>
+                     <li class="profile-menu-item">
+                        <a href="">
+                           <div class="icon">
+                              <i data-lucide="bolt"></i>
+                           </div>
+                           <span>Settings</span>
+                        </a>
+                     </li>
+                     <li class="profile-menu-item">
+                        <a href="">
+                           <div class="icon">
+                              <i data-lucide="circle-arrow-right"></i>
+                           </div>
+                           <span>Log Out</span>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <div class="offcanvas offcanvas-end notification-box" tabindex="-1" id="notificationsArea"
+      aria-labelledby="notificationsAreaLabel">
+      <div class="offcanvas-header">
+         <h6 class="offcanvas-title" id="notificationsAreaLabel">
+            <span>Notifications</span>
+            <span class="count">40</span>
+         </h6>
+         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body notification-items">
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="message-circle"></i></div>
+            <h6>John sent a message<div class="created">5 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="thumbs-up"></i></div>
+            <h6>Emma liked your post<div class="created">10 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="message-square"></i></div>
+            <h6>Michael commented on your post<div class="created">15 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="user-plus"></i></div>
+            <h6>Sarah followed you<div class="created">20 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="shopping-cart"></i></div>
+            <h6>Alex purchased your product<div class="created">30 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="bell"></i></div>
+            <h6>David set a reminder<div class="created">35 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="file-text"></i></div>
+            <h6>Olivia shared a document<div class="created">40 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="credit-card"></i></div>
+            <h6>Henry made a payment<div class="created">45 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="star"></i></div>
+            <h6>Emma rated your service<div class="created">50 Minutes Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="settings"></i></div>
+            <h6>System settings updated<div class="created">1 Hour Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="mail"></i></div>
+            <h6>Lucas sent you an email<div class="created">1 Hour Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="briefcase"></i></div>
+            <h6>New job posting available<div class="created">2 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="cloud-upload"></i></div>
+            <h6>Alice uploaded a file<div class="created">3 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="zap"></i></div>
+            <h6>System detected unusual activity<div class="created">4 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="user-x"></i></div>
+            <h6>Tom unfollowed you<div class="created">5 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="tag"></i></div>
+            <h6>Discount applied to your order<div class="created">6 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="calendar"></i></div>
+            <h6>Meeting scheduled for tomorrow<div class="created">7 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="map-pin"></i></div>
+            <h6>New location added to your profile<div class="created">8 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="upload"></i></div>
+            <h6>Your profile picture was updated<div class="created">9 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+         <a href="" class="notification-item">
+            <div class="icon"><i data-lucide="shield-alert"></i></div>
+            <h6>Security alert: Login from new device<div class="created">10 Hours Ago</div>
+            </h6>
+            <div class="unread-icon"><i data-lucide="dot"></i></div>
+         </a>
+      </div>
+      <div class="footer-menu">
+         <a href="" class="read-btn">
+            <i data-lucide="check-check"></i>
+            Mark All As Read
+         </a>
+         <a href="" class="view-btn">
+            <i data-lucide="eye"></i>
+            View All
+         </a>
+      </div>
+   </div>
+
+   <main class="main-body">
+      <aside class="sidebar-wrapper">
+         <div class="sidebar-header">
+            <div class="sidebar-logo">
+               <a href="">
+                  <div class="logo">
+                     <img src="assets/images/sitebar-logo.png" alt="">
+                  </div>
+                  <div class="fold-logo">
+                     <img src="assets/images/favicon.png" alt="">
+                  </div>
+               </a>
+               <button type="button" class="collapse-icon">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M8.75 3.5L5.25 7L8.75 10.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                  </svg>
+               </button>
+            </div>
+         </div>
+         <div class="sidebar-menus">
+            <ul class="menu-list">
+               <li class="menu-item">
+                  <a href="" class="menu-link active">
+                     <i data-lucide="layout-dashboard"></i>
+                     <span class="menu-title">Dashboard</span>
+                  </a>
+               </li>
+               <li class="menu-item">
+                  <a href="javascript:void(0)" class="menu-link">
+                     <i data-lucide="user-circle"></i>
+                     <span class="menu-title">Customers Management</span>
+                     <span class="right-arrow">
+                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M3.5 5.75L7 9.25L10.5 5.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                        </svg>
+                     </span>
+                  </a>
+                  <ul class="submenu-items">
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="layout-dashboard"></i>
+                           All Customers
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-round-check"></i>
+                           Active Customers
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-round-x"></i>
+                           Disabled Customers
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-plus"></i>
+                           Add New Customer
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="menu-item">
+                  <a href="javascript:void(0)" class="menu-link">
+                     <i data-lucide="user-circle"></i>
+                     <span class="menu-title">KYC Management</span>
+                     <span class="right-arrow">
+                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M3.5 5.75L7 9.25L10.5 5.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                        </svg>
+                     </span>
+                  </a>
+                  <ul class="submenu-items">
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="layout-dashboard"></i>
+                           All KYC
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-round-check"></i>
+                           Pending KYC
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-round-x"></i>
+                           Approved KYC
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="menu-item">
+                  <a href="" class="menu-link">
+                     <i data-lucide="user"></i>
+                     <span class="menu-title">Profile</span>
+                  </a>
+               </li>
+               <li class="menu-item">
+                  <a href="" class="menu-link">
+                     <i data-lucide="calendar"></i>
+                     <span class="menu-title">Calendar</span>
+                  </a>
+               </li>
+               <li class="menu-item">
+                  <a href="" class="menu-link">
+                     <i data-lucide="file-text"></i>
+                     <span class="menu-title">Documents</span>
+                  </a>
+               </li>
+               <li class="menu-item">
+                  <a href="" class="menu-link">
+                     <i data-lucide="bar-chart"></i>
+                     <span class="menu-title">Analytics</span>
+                  </a>
+               </li>
+               <li class="menu-item">
+                  <a href="" class="menu-link">
+                     <i data-lucide="shopping-cart"></i>
+                     <span class="menu-title">Orders</span>
+                  </a>
+               </li>
+               <li class="menu-item">
+                  <a href="" class="menu-link">
+                     <i data-lucide="settings"></i>
+                     <span class="menu-title">Settings</span>
+                  </a>
+               </li>
+               <li class="menu-item">
+                  <a href="" class="menu-link">
+                     <i data-lucide="message-circle"></i>
+                     <span class="menu-title">Messages</span>
+                  </a>
+               </li>
+               <li class="menu-item">
+                  <a href="javascript:void(0)" class="menu-link">
+                     <i data-lucide="user-circle"></i>
+                     <span class="menu-title">KYC Management</span>
+                     <span class="right-arrow">
+                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M3.5 5.75L7 9.25L10.5 5.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                        </svg>
+                     </span>
+                  </a>
+                  <ul class="submenu-items">
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="layout-dashboard"></i>
+                           All KYC
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-round-check"></i>
+                           Pending KYC
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-round-x"></i>
+                           Approved KYC
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-round-minus"></i>
+                           Rejected KYC
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-round-cog"></i>
+                           KYC Settings
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+
+               <li class="menu-item">
+                  <a href="javascript:void(0)" class="menu-link">
+                     <i data-lucide="settings"></i>
+                     <span class="menu-title">System Settings</span>
+                     <span class="right-arrow">
+                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M3.5 5.75L7 9.25L10.5 5.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                        </svg>
+                     </span>
+                  </a>
+                  <ul class="submenu-items">
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="network"></i>
+                           General Settings
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="lock"></i>
+                           Security Settings
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="mail"></i>
+                           Email Settings
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="database"></i>
+                           Database Settings
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="cloud"></i>
+                           Cloud Settings
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+
+               <li class="menu-item">
+                  <a href="javascript:void(0)" class="menu-link">
+                     <i data-lucide="shopping-cart"></i>
+                     <span class="menu-title">Order Management</span>
+                     <span class="right-arrow">
+                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M3.5 5.75L7 9.25L10.5 5.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                        </svg>
+                     </span>
+                  </a>
+                  <ul class="submenu-items">
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="package"></i>
+                           All Orders
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="package-plus"></i>
+                           New Orders
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="package-check"></i>
+                           Completed Orders
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="package-x"></i>
+                           Cancelled Orders
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="package-search"></i>
+                           Order Tracking
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+
+               <li class="menu-item">
+                  <a href="javascript:void(0)" class="menu-link">
+                     <i data-lucide="users"></i>
+                     <span class="menu-title">User Management</span>
+                     <span class="right-arrow">
+                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M3.5 5.75L7 9.25L10.5 5.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                        </svg>
+                     </span>
+                  </a>
+                  <ul class="submenu-items">
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user"></i>
+                           All Users
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-plus"></i>
+                           Add User
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-check"></i>
+                           Active Users
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-x"></i>
+                           Inactive Users
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="user-cog"></i>
+                           User Roles
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+
+               <li class="menu-item">
+                  <a href="javascript:void(0)" class="menu-link">
+                     <i data-lucide="bar-chart"></i>
+                     <span class="menu-title">Reports</span>
+                     <span class="right-arrow">
+                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M3.5 5.75L7 9.25L10.5 5.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                        </svg>
+                     </span>
+                  </a>
+                  <ul class="submenu-items">
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="file-text"></i>
+                           Sales Report
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="file-bar-chart"></i>
+                           Financial Report
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="file-pie-chart"></i>
+                           Analytics Report
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="file-search"></i>
+                           Audit Report
+                        </a>
+                     </li>
+                     <li class="submenu-item">
+                        <a href="" class="submenu-link">
+                           <i data-lucide="file-output"></i>
+                           Export Report
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="menu-item">
+                  <a href="" class="menu-link">
+                     <i data-lucide="cloud"></i>
+                     <span class="menu-title">Cloud Storage</span>
+                  </a>
+               </li>
+               <li class="menu-item">
+                  <a href="" class="menu-link">
+                     <i data-lucide="users"></i>
+                     <span class="menu-title">Team</span>
+                  </a>
+               </li>
+               <li class="menu-item">
+                  <a href="" class="menu-link">
+                     <i data-lucide="shopping-cart"></i>
+                     <span class="menu-title">Orders</span>
+                  </a>
+               </li>
+               <li class="menu-item">
+                  <a href="" class="menu-link">
+                     <i data-lucide="help-circle"></i>
+                     <span class="menu-title">Support</span>
+                  </a>
+               </li>
+               <li class="menu-item">
+                  <a href="" class="menu-link">
+                     <i data-lucide="map-pin"></i>
+                     <span class="menu-title">Locations</span>
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </aside>
+
+      <div class="main-content">
+         <div class="d-flex align-items-center justify-content-between mb-2">
+            <h6 class="page-title"> User Details</h6>
+            <div class="btn-wrap">
+               <a href="" class="rock-btn primary-btn">
+                  <i data-lucide="arrow-left"></i>
+                  <span>Back to Users</span>
+               </a>
+            </div>
+         </div>
+         <div class="rock-card">
+            <div class="rock-card-header">
+               <h6 class="rock-card-title">User Summary</h6>
+            </div>
+            <div class="rock-card-body p-4">
+               <div class="row">
+                  <div class="col-sm-3 col-md-3 col-lg-3 mb-4">
+                     <div class="user-profile-card  bg-black">
+                        <div class="user-avatar">
+                           <img src="assets/images/profile/pic.png" alt="User Avatar" class="rounded-circle"
+                              width="100">
+                           <div class="user-info">
+                              <div class="user-name">Sajjad Hossain Shohag</div>
+                              <div class="more-info">
+                                 <div class="info-item">
+                                    <div class="info-icon">
+                                       <i data-lucide="map-pin"></i>
+                                    </div>
+                                    <span class="info-value">Dhaka, Bangladesh</span>
+                                 </div>
+                                 <div class="info-item">
+                                    <div class="info-icon">
+                                       <i data-lucide="lock-keyhole"></i>
+                                    </div>
+                                    <span class="info-value">Last Login At 2 Hours Ago</span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="user-menu">
+                        <ul class="user-menu-list">
+                           <li class="user-menu-item" data-bs-toggle="tooltip" data-placement="bottom"
+                              data-bs-title="Send Message">
+                              <a href="">
+                                 <i data-lucide="mail"></i>
+                              </a>
+                           </li>
+                           <li class="user-menu-item" data-bs-toggle="tooltip" data-placement="bottom"
+                              data-bs-title="Login as User">
+                              <a href="">
+                                 <i data-lucide="log-in"></i>
+                              </a>
+                           </li>
+                           <li class="user-menu-item" data-bs-toggle="tooltip" data-placement="bottom"
+                              data-bs-title="Balance Update">
+                              <a href="">
+                                 <i data-lucide="badge-dollar-sign"></i>
+                              </a>
+                           </li>
+                           <li class="user-menu-item danger-btn" data-bs-toggle="tooltip" data-placement="bottom"
+                              data-bs-title="Delete User">
+                              <a href="">
+                                 <i data-lucide="trash-2"></i>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-sm-9 col-md-9 col-lg-9">
+                     <div class="row">
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                           <a href="javascript:void(0)" class="user-stat-item">
+                              <div class="icon">
+                                 <i data-lucide="wallet"></i>
+                              </div>
+                              <div class="box">
+                                 <h6 class="count">85,000</h6>
+                                 <span class="title">Total Balance</span>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                           <a href="javascript:void(0)" class="user-stat-item">
+                              <div class="icon">
+                                 <i data-lucide="arrow-down-circle"></i>
+                              </div>
+                              <div class="box">
+                                 <h6 class="count">45,230</h6>
+                                 <span class="title">Deposits</span>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                           <a href="javascript:void(0)" class="user-stat-item">
+                              <div class="icon">
+                                 <i data-lucide="arrow-up-circle"></i>
+                              </div>
+                              <div class="box">
+                                 <h6 class="count">32,150</h6>
+                                 <span class="title">Withdrawals</span>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                           <a href="javascript:void(0)" class="user-stat-item">
+                              <div class="icon">
+                                 <i data-lucide="shopping-cart"></i>
+                              </div>
+                              <div class="box">
+                                 <h6 class="count">1,250</h6>
+                                 <span class="title">Orders</span>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                           <a href="javascript:void(0)" class="user-stat-item">
+                              <div class="icon">
+                                 <i data-lucide="ticket"></i>
+                              </div>
+                              <div class="box">
+                                 <h6 class="count">156</h6>
+                                 <span class="title">Support Tickets</span>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                           <a href="javascript:void(0)" class="user-stat-item">
+                              <div class="icon">
+                                 <i data-lucide="repeat"></i>
+                              </div>
+                              <div class="box">
+                                 <h6 class="count">2,890</h6>
+                                 <span class="title">Transactions</span>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                           <a href="javascript:void(0)" class="user-stat-item">
+                              <div class="icon">
+                                 <i data-lucide="shield-check"></i>
+                              </div>
+                              <div class="box">
+                                 <h6 class="count">450</h6>
+                                 <span class="title">Verifications</span>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                           <a href="javascript:void(0)" class="user-stat-item">
+                              <div class="icon">
+                                 <i data-lucide="bell"></i>
+                              </div>
+                              <div class="box">
+                                 <h6 class="count">75</h6>
+                                 <span class="title">Notifications</span>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                           <a href="javascript:void(0)" class="user-stat-item">
+                              <div class="icon">
+                                 <i data-lucide="file-text"></i>
+                              </div>
+                              <div class="box">
+                                 <h6 class="count">320</h6>
+                                 <span class="title">Documents</span>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                           <a href="javascript:void(0)" class="user-stat-item">
+                              <div class="icon">
+                                 <i data-lucide="clock"></i>
+                              </div>
+                              <div class="box">
+                                 <h6 class="count">180</h6>
+                                 <span class="title">Login Days</span>
+                              </div>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </main>
+
+   <script src="assets/js/bootstrap-bundle.min.js"></script>
+   <script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/lucide.min.js"></script>
+   <script src="assets/js/nice-select.min.js"></script>
+   <script src="assets/js/app.js"></script>
+</body>
+
+</html>
